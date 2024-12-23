@@ -70,22 +70,24 @@ Normalization is a crucial process in database design aimed at improving efficie
 #### **Types of Normal Forms**  
 1. **First Normal Form (1NF)**  
    - Every cell in a relation must contain an atomic value.  
-   - Multi-valued attributes are not allowed.  
+   - ***Multi-valued attributes are not allowed.***  
 
 2. **Second Normal Form (2NF)**  
-   - Relation must satisfy 1NF.  
+   - Relation must satisfy 1NF.
+   - ***Non-Prime attribute should not be determined by part of C.K.***
    - Eliminate **Partial Dependency**:  
      - All non-prime attributes must be fully dependent on the **Primary Key**.  
      - No non-prime attribute should depend on a part of the Primary Key.  
 
 3. **Third Normal Form (3NF)**  
-   - Relation must satisfy 2NF.  
+   - Relation must satisfy 2NF.
+   - ***For every FD `A → B`, `A` must be a candidate key or `B` must be prime attribute.***
    - Eliminate **Transitivity Dependency**:  
      - A non-prime attribute cannot depend on another non-prime attribute.  
 
 4. **Boyce-Codd Normal Form (BCNF)**  
    - Relation must satisfy 3NF.  
-   - For every FD `A → B`, `A` must be a superkey.  
+   - ***For every FD `A → B`, `A` must be a superkey.*** 
    - Prime attributes must not depend on other prime or non-prime attributes.  
 
 ---
